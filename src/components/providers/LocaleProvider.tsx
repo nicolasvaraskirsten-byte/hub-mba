@@ -6,7 +6,6 @@ import {
   useContext,
   useTransition,
 } from "react";
-import { useRouter } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
 
 type LocaleContextValue = {
@@ -24,7 +23,6 @@ export function LocaleProvider({
   children: React.ReactNode;
   initialLocale: Locale;
 }) {
-  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   const setLocale = useCallback(
