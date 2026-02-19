@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers/SessionProvider";
+import { LocaleProvider } from "@/components/providers/LocaleProvider";
+import type { Locale } from "@/lib/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,15 +23,28 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let locale: Locale = "es";
+  try {
+    const cookieStore = await cookies();
+    const value = cookieStore.get("NEXT_LOCALE")?.value;
+    if (value === "en" || value === "es") {
+      locale = value as Locale;
+    }
+  } catch {
+    locale = "es";
+  }
+
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased min-h-screen w-full overflow-x-hidden`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+        </Providers>
       </body>
     </html>
   );

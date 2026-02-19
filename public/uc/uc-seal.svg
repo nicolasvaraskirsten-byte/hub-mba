@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+  <circle cx="24" cy="24" r="22" stroke="hsl(211, 76%, 22%)" stroke-width="2" fill="white"/>
+  <circle cx="24" cy="24" r="18" stroke="hsl(211, 76%, 22%)" stroke-width="1" fill="none"/>
+  <text x="24" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="hsl(211, 76%, 22%)">UC</text>
+</svg>

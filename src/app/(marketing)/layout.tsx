@@ -1,4 +1,4 @@
-import { Header } from "@/components/layout/Header";
+import { SiteHeaderUC } from "@/components/SiteHeaderUC";
 import { Footer } from "@/components/layout/Footer";
 import { CTAStrip } from "@/components/layout/CTAStrip";
 
@@ -9,7 +9,7 @@ export default function MarketingLayout({
 }) {
   return (
     <>
-      <Header />
+      <SiteHeaderUC />
       <main className="min-h-[calc(100vh-8rem)] w-full min-w-0">{children}</main>
       <CTAStrip />
       <Footer />

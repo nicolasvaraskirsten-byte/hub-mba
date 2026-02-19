@@ -6,6 +6,9 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    // Rutas con paréntesis (route groups) para que Tailwind escanee las clases
+    "./src/app/(marketing)/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/(app)/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
   	extend: {
