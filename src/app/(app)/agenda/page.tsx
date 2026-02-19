@@ -7,7 +7,7 @@ export default async function AgendaPage() {
   const bookings = await getBookingsForUser(session.user.id!);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
         Mi agenda
       </h1>

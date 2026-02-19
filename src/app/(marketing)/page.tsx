@@ -17,7 +17,7 @@ export default async function LandingPage() {
   ]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-w-0 w-full">
       {/* Hero */}
       <section className="relative w-full overflow-hidden">
         <div className="relative h-[440px] sm:h-[560px] md:h-[620px] w-full min-w-full bg-black/20">
@@ -30,20 +30,20 @@ export default async function LandingPage() {
             quality={90}
             sizes="100vw"
           />
-          <div className="absolute inset-0 flex flex-col justify-end container mx-auto px-4 pb-16">
-            <div className="max-w-2xl animate-in fade-in-0 duration-500">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+          <div className="absolute inset-0 flex flex-col justify-end container mx-auto px-4 sm:px-6 pb-8 sm:pb-16">
+            <div className="max-w-2xl animate-in fade-in-0 duration-500 min-w-0">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 Conecta experiencia ejecutiva con emprendimiento con impacto
               </h1>
-              <p className="text-lg text-white/90 mt-4">
+              <p className="text-base sm:text-lg text-white/90 mt-3 sm:mt-4">
                 El espacio del MBA UC que articula trayectoria empresarial e
                 innovación para que despegues tu siguiente paso.
               </p>
-              <div className="flex flex-wrap gap-3 mt-8">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mt-6 sm:mt-8">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-cta text-white hover:bg-cta/90 border-0"
+                  className="min-h-[44px] bg-cta text-white hover:bg-cta/90 border-0"
                 >
                   <Link href="/auth/signin">
                     Unirme al Hub
@@ -54,7 +54,7 @@ export default async function LandingPage() {
                   asChild
                   size="lg"
                   variant="secondary"
-                  className="bg-white/90 text-foreground hover:bg-white"
+                  className="min-h-[44px] bg-white/90 text-foreground hover:bg-white"
                 >
                   <Link href="/expertos">Explorar expertos</Link>
                 </Button>
@@ -65,7 +65,7 @@ export default async function LandingPage() {
       </section>
 
       {/* Propuesta de valor */}
-      <section className="container mx-auto px-4 py-16 sm:py-24">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
             Un ecosistema que potencia tu transición
@@ -111,8 +111,8 @@ export default async function LandingPage() {
       </section>
 
       {/* Para quién es */}
-      <section className="bg-muted/50 py-16 sm:py-24">
-        <div className="container mx-auto px-4">
+      <section className="bg-muted/50 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-foreground">
             Para quién es el Hub
           </h2>
@@ -146,7 +146,7 @@ export default async function LandingPage() {
       </section>
 
       {/* Cómo funciona */}
-      <section className="container mx-auto px-4 py-16 sm:py-24">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-foreground">
           Cómo funciona
         </h2>
@@ -168,8 +168,8 @@ export default async function LandingPage() {
       </section>
 
       {/* Expertos preview */}
-      <section className="bg-muted/50 py-16 sm:py-24">
-        <div className="container mx-auto px-4">
+      <section className="bg-muted/50 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
               Expertos del Hub
@@ -210,7 +210,7 @@ export default async function LandingPage() {
       </section>
 
       {/* Próximos eventos */}
-      <section className="container mx-auto px-4 py-16 sm:py-24">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
           Próximos eventos
         </h2>
@@ -242,8 +242,8 @@ export default async function LandingPage() {
       </section>
 
       {/* Casos de uso */}
-      <section className="bg-muted/50 py-16 sm:py-24">
-        <div className="container mx-auto px-4">
+      <section className="bg-muted/50 py-12 sm:py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-foreground">
             Casos de uso
           </h2>
@@ -267,7 +267,7 @@ export default async function LandingPage() {
       </section>
 
       {/* CTA final */}
-      <section className="container mx-auto px-4 py-16 sm:py-24 text-center">
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
           ¿Listo para sumarte?
         </h2>

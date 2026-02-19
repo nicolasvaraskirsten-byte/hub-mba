@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers/SessionProvider";
@@ -14,14 +14,20 @@ export const metadata: Metadata = {
     "El espacio del MBA UC que articula experiencia ejecutiva, transición emprendedora y trayectoria empresarial para activar innovación y emprendimiento con impacto.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="es" className="scroll-smooth">
+      <body className={`${inter.variable} font-sans antialiased min-h-screen w-full overflow-x-hidden`}>
         <Providers>{children}</Providers>
       </body>
     </html>
