@@ -2,6 +2,16 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
+    safelist: [
+      "bg-hub-pink",
+      "text-hub-pink-foreground",
+      "bg-hub-pink/90",
+      "bg-hub-pink/15",
+      "text-hub-pink",
+      "border-hub-pink/20",
+      "border-hub-pink/30",
+      "hover:bg-hub-pink/90",
+    ],
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -55,7 +65,9 @@ const config: Config = {
   			},
   			cta: 'hsl(var(--cta))',
   			'cta-foreground': 'hsl(var(--cta-foreground))',
-  			'hub-accent': 'hsl(var(--hub-accent))'
+  			'hub-accent': 'hsl(var(--hub-accent))',
+  			'hub-pink': '#D946EF',
+  			'hub-pink-foreground': '#ffffff'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

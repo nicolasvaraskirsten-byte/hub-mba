@@ -39,6 +39,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { getTranslations } from "@/lib/i18n";
+import { HUB_JOIN_FORM_URL } from "@/lib/constants";
 
 /** Logo institucional UC: escudo + texto "PONTIFICIA UNIVERSIDAD CATÓLICA DE CHILE" (lockup) */
 const UC_LOGO_LOCKUP = "/uc/logo-uc-lockup.png";
@@ -343,7 +344,7 @@ export function SiteHeaderUC() {
                       </button>
                     </div>
                   ) : (
-                    <Link href="/auth/signin" onClick={closeMobile}>
+                    <Link href={HUB_JOIN_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={closeMobile}>
                       <Button size="sm" className="w-full bg-cta text-cta-foreground hover:bg-cta/90">
                         {t.joinHub}
                       </Button>
@@ -431,7 +432,7 @@ export function SiteHeaderUC() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link href="/auth/signin">
+              <Link href={HUB_JOIN_FORM_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="sm" className="bg-cta text-cta-foreground hover:bg-cta/90">
                   {t.joinHub}
                 </Button>

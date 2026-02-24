@@ -13,6 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Menu, User, LogOut, LayoutDashboard, Calendar } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { HUB_JOIN_FORM_URL } from "@/lib/constants";
 
 export function Header() {
   const { data: session, status } = useSession();
@@ -118,7 +119,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Link href="/auth/signin">
+            <Link href={HUB_JOIN_FORM_URL} target="_blank" rel="noopener noreferrer">
               <Button size="sm" className="bg-cta text-cta-foreground hover:bg-cta/90">
                 Unirme al Hub
               </Button>

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { HUB_JOIN_FORM_URL } from "@/lib/constants";
 
 export function BookingForm({ expertUserId }: { expertUserId: string }) {
   const { data: session, status } = useSession();
@@ -57,7 +58,7 @@ export function BookingForm({ expertUserId }: { expertUserId: string }) {
           Inicia sesión para agendar una sesión con este experto.
         </p>
         <Button asChild className="w-full bg-cta text-white hover:bg-cta/90">
-          <Link href="/auth/signin">Unirme al Hub</Link>
+          <Link href={HUB_JOIN_FORM_URL} target="_blank" rel="noopener noreferrer">Unirme al Hub</Link>
         </Button>
       </div>
     );

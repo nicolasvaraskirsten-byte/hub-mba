@@ -38,11 +38,14 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    /* HUB MBA UC - CTA y acentos (azul institucional) */
+    /* HUB MBA UC - CTA y acentos */
     --radius-card: 1rem;
     --cta: 211 76% 22%;
     --cta-foreground: 0 0% 100%;
     --hub-accent: 208 65% 38%;
+    /* Rosado/fucsia principal para CTA y badges del Hub */
+    --hub-pink: 330 75% 55%;
+    --hub-pink-foreground: 0 0% 100%;
   }
   .dark {
     --background: 0 0% 3.9%;

@@ -48,11 +48,15 @@ const translations = {
       ombudsLink: "Ir a la Oficina de Ombuds UC",
     },
     landing: {
-      heroTitle: "Hub de Innovación y Emprendimiento",
+      heroTitle: "Conecta experiencia ejecutiva con emprendimiento con impacto",
       heroSubtitle:
         "El espacio del MBA UC que articula trayectoria empresarial e innovación para que despegues tu siguiente paso.",
+      exclusiveBadge: "Exclusivo MBA UC",
+      targetAudienceText:
+        "El Hub está dirigido a alumnos y exalumnos del MBA UC que quieren activar innovación y emprendimiento con impacto.",
       ctaJoin: "Unirme al Hub",
       ctaExploreExperts: "Explorar expertos",
+      ctaSecondary: "Ver expertos",
       ecosystemBadge: "Ecosistema MBA UC",
       ecosystemTitle: "Un ecosistema que potencia tu transición",
       ecosystemDesc:
@@ -66,6 +70,29 @@ const translations = {
       cardResources: "Recursos y eventos",
       cardResourcesText:
         "Workshops, guías y eventos para acelerar tu proyecto o carrera.",
+      profilesTitle: "El Hub es para quienes…",
+      profile1Title: "Quiero emprender desde cero",
+      profile1Desc:
+        "Tengo una idea en etapa inicial y necesito guía para validarla y convertirla en un proyecto real.",
+      profile2Title: "Ya estoy emprendiendo y quiero escalar",
+      profile2Desc:
+        "Tengo tracción o un negocio en marcha y busco herramientas, mentoría y red para crecer.",
+      profile3Title: "Trabajo (o quiero involucrarme) en innovación",
+      profile3Desc:
+        "Estoy dentro de una organización y quiero impulsar innovación, intraemprendimiento y nuevos negocios.",
+      profile4Title: "Quiero un cambio de carrera para emprender",
+      profile4Desc:
+        "Estoy en transición y quiero diseñar mi próximo paso para salir del mundo corporativo y emprender.",
+      benefitsTitle: "¿Qué significa ser parte del Hub?",
+      benefitsSubtitle: "Beneficios concretos para transformar ideas en acción.",
+      benefit1: "Acceso a mentoría con expertos y founders.",
+      benefit2:
+        "Red activa de alumnos y exalumnos MBA UC para conectar y colaborar.",
+      benefit3:
+        "Validación y feedback para tu idea o negocio (pitch, hipótesis, tracción).",
+      benefit4:
+        "Espacios prácticos: sesiones, talleres y actividades para pasar de idea a acción.",
+      benefitsCtaText: "Conecta con la red MBA UC y da el siguiente paso.",
       forWhoTitle: "Para quién es el Hub",
       forWhoSubtitle: "Diseñado para quienes buscan dar el siguiente paso con impacto.",
       innovator: "Innovador corporativo",
@@ -153,11 +180,15 @@ const translations = {
       ombudsLink: "Go to Ombuds Office UC",
     },
     landing: {
-      heroTitle: "Innovation and Entrepreneurship Hub",
+      heroTitle: "Connect executive experience with entrepreneurship and impact",
       heroSubtitle:
         "The MBA UC space that connects business trajectory and innovation so you can take your next step.",
+      exclusiveBadge: "Exclusive MBA UC",
+      targetAudienceText:
+        "The Hub is for current and former MBA UC students who want to activate innovation and entrepreneurship with impact.",
       ctaJoin: "Join the Hub",
       ctaExploreExperts: "Explore experts",
+      ctaSecondary: "See experts",
       ecosystemBadge: "MBA UC Ecosystem",
       ecosystemTitle: "An ecosystem that powers your transition",
       ecosystemDesc:
@@ -171,6 +202,29 @@ const translations = {
       cardResources: "Resources and events",
       cardResourcesText:
         "Workshops, guides and events to accelerate your project or career.",
+      profilesTitle: "The Hub is for those who…",
+      profile1Title: "Want to start a venture from scratch",
+      profile1Desc:
+        "I have an early-stage idea and need guidance to validate it and turn it into a real project.",
+      profile2Title: "Are already building and want to scale",
+      profile2Desc:
+        "I have traction or a business running and I'm looking for tools, mentoring and network to grow.",
+      profile3Title: "Work (or want to get involved) in innovation",
+      profile3Desc:
+        "I'm inside an organization and want to drive innovation, intrapreneurship and new ventures.",
+      profile4Title: "Want a career shift into entrepreneurship",
+      profile4Desc:
+        "I'm in transition and want to design my next step to move from the corporate world into entrepreneurship.",
+      benefitsTitle: "What does it mean to be part of the Hub?",
+      benefitsSubtitle: "Concrete benefits to turn ideas into action.",
+      benefit1: "Access to mentoring with experts and founders.",
+      benefit2:
+        "Active network of MBA UC students and alumni to connect and collaborate.",
+      benefit3:
+        "Validation and feedback for your idea or business (pitch, hypothesis, traction).",
+      benefit4:
+        "Hands-on spaces: sessions, workshops and activities to go from idea to action.",
+      benefitsCtaText: "Connect with the MBA UC network and take the next step.",
       forWhoTitle: "Who is the Hub for",
       forWhoSubtitle: "Designed for those looking to take the next step with impact.",
       innovator: "Corporate innovator",

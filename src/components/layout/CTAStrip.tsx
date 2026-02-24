@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { getTranslations } from "@/lib/i18n";
+import { HUB_JOIN_FORM_URL } from "@/lib/constants";
 
 export function CTAStrip() {
   const { locale } = useLocale();
@@ -18,18 +19,16 @@ export function CTAStrip() {
           <Button
             asChild
             size="lg"
-            className="h-11 px-6 rounded-md bg-white text-[hsl(var(--cta))] font-semibold hover:bg-white/95 shadow-sm border-0 min-w-[140px]"
+            className="h-11 px-6 rounded-md bg-hub-pink text-hub-pink-foreground font-semibold hover:bg-hub-pink/90 shadow-sm border-0 min-w-[140px]"
           >
-            <Link href="/auth/signin">{t.joinHub}</Link>
+            <Link href={HUB_JOIN_FORM_URL} target="_blank" rel="noopener noreferrer">{t.joinHub}</Link>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-11 px-6 rounded-md border-2 border-white text-white font-semibold bg-transparent hover:bg-white/15 min-w-[160px]"
+          <Link
+            href="/expertos"
+            className="text-sm font-medium text-white/90 hover:text-white underline underline-offset-2"
           >
-            <Link href="/expertos">{t.exploreExperts}</Link>
-          </Button>
+            {t.exploreExperts}
+          </Link>
         </div>
       </div>
     </section>
