@@ -1,3 +1,4 @@
+import { unstable_noStore } from "next/cache";
 import { notFound } from "next/navigation";
 import { getExpertById } from "@/lib/data/experts";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -6,14 +7,16 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ExpertCalendlyCard } from "./_components/ExpertCalendlyCard";
 import { Linkedin, MapPin, Globe } from "lucide-react";
 
-/** Evita caché: cada visita al experto pide datos frescos y no muestra otro experto al navegar. */
+/** Sin caché ni ISR: siempre render dinámico para que no se muestre HTML de otro experto. */
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function ExpertProfilePage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
+  unstable_noStore();
   let id: string;
   let expert: Awaited<ReturnType<typeof getExpertById>>;
   try {
