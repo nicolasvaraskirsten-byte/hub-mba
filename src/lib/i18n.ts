@@ -55,6 +55,8 @@ const translations = {
       targetAudienceText:
         "El Hub está dirigido a alumnos y exalumnos del MBA UC que quieren activar innovación y emprendimiento con impacto.",
       ctaJoin: "Unirme al Hub",
+      ctaWhatsApp: "Unirse al grupo de WhatsApp",
+      whatsappTooltip: "Únete al grupo del HUB",
       ctaExploreExperts: "Explorar expertos",
       ctaSecondary: "Ver expertos",
       ecosystemBadge: "Ecosistema MBA UC",
@@ -70,7 +72,7 @@ const translations = {
       cardResources: "Recursos y eventos",
       cardResourcesText:
         "Workshops, guías y eventos para acelerar tu proyecto o carrera.",
-      profilesTitle: "El Hub es para quienes…",
+      profilesTitle: "El Hub es para",
       profile1Title: "Quiero emprender desde cero",
       profile1Desc:
         "Tengo una idea en etapa inicial y necesito guía para validarla y convertirla en un proyecto real.",
@@ -187,6 +189,8 @@ const translations = {
       targetAudienceText:
         "The Hub is for current and former MBA UC students who want to activate innovation and entrepreneurship with impact.",
       ctaJoin: "Join the Hub",
+      ctaWhatsApp: "Join the WhatsApp group",
+      whatsappTooltip: "Join the HUB group",
       ctaExploreExperts: "Explore experts",
       ctaSecondary: "See experts",
       ecosystemBadge: "MBA UC Ecosystem",
@@ -202,7 +206,7 @@ const translations = {
       cardResources: "Resources and events",
       cardResourcesText:
         "Workshops, guides and events to accelerate your project or career.",
-      profilesTitle: "The Hub is for those who…",
+      profilesTitle: "The Hub is for",
       profile1Title: "Want to start a venture from scratch",
       profile1Desc:
         "I have an early-stage idea and need guidance to validate it and turn it into a real project.",

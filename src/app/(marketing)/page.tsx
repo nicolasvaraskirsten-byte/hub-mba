@@ -70,7 +70,7 @@ export default async function LandingPage() {
         </div>
       </section>
 
-      {/* Perfiles: "El Hub es para quienes…" */}
+      {/* Perfiles: "El Hub es para" */}
       <Profiles t={t} />
 
       {/* Beneficios: "¿Qué significa ser parte del Hub?" */}

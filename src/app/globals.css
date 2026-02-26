@@ -8,6 +8,20 @@
   }
 }
 
+/* Pulso suave cada 3s para FAB de WhatsApp */
+@keyframes whatsapp-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.whatsapp-fab-pulse {
+  animation: whatsapp-pulse 3s ease-in-out infinite;
+}
+
 
 
 @layer base {

@@ -5,6 +5,7 @@ import "./globals.css";
 import { Providers } from "@/components/providers/SessionProvider";
 import { LocaleProvider } from "@/components/providers/LocaleProvider";
 import type { Locale } from "@/lib/i18n";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default async function RootLayout({
       <body className={`${inter.variable} font-sans antialiased min-h-screen w-full overflow-x-hidden`}>
         <Providers>
           <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+          <WhatsAppFloat />
         </Providers>
       </body>
     </html>
