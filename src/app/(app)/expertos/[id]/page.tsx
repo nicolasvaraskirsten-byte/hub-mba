@@ -1,27 +1,42 @@
 import { notFound } from "next/navigation";
 import { getExpertById } from "@/lib/data/experts";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { BookingForm } from "./_components/BookingForm";
+import { ExpertCalendlyCard } from "./_components/ExpertCalendlyCard";
 import { Linkedin, MapPin, Globe } from "lucide-react";
+
+/** Evita caché: cada visita al experto pide datos frescos y no muestra otro experto al navegar. */
+export const dynamic = "force-dynamic";
 
 export default async function ExpertProfilePage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
-  const expert = await getExpertById(id);
+  let id: string;
+  let expert: Awaited<ReturnType<typeof getExpertById>>;
+  try {
+    const p = await params;
+    id = p.id;
+    expert = await getExpertById(id);
+  } catch {
+    notFound();
+  }
   if (!expert) notFound();
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <div key={id} className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
         <div className="lg:col-span-2 space-y-6 min-w-0">
           <Card className="rounded-2xl shadow-sm overflow-hidden">
             <CardHeader className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <Avatar className="h-20 w-20 sm:h-24 sm:w-24 rounded-2xl shrink-0">
+                <AvatarImage
+                  src={expert.user?.avatar_url ?? undefined}
+                  alt={expert.user?.name ?? "Experto"}
+                  className="rounded-2xl object-cover"
+                />
                 <AvatarFallback className="rounded-2xl bg-hub-accent/20 text-hub-accent text-2xl">
                   {(expert.user?.name ?? "E").slice(0, 2).toUpperCase()}
                 </AvatarFallback>
@@ -88,11 +103,14 @@ export default async function ExpertProfilePage({
             <CardHeader>
               <h2 className="font-semibold">Agendar sesión</h2>
               <p className="text-sm text-muted-foreground">
-                Solicita una reunión con {expert.user?.name?.split(" ")[0] ?? "el experto"}.
+                Reserva una reunión con {expert.user?.name?.split(" ")[0] ?? "el experto"}.
               </p>
             </CardHeader>
             <CardContent>
-              <BookingForm expertUserId={expert.user_id} />
+              <ExpertCalendlyCard
+                calendlyUrl={expert.calendly_url ?? null}
+                expertName={expert.user?.name ?? null}
+              />
             </CardContent>
           </Card>
         </div>

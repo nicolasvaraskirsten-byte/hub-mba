@@ -44,6 +44,8 @@ export interface Expert {
   languages: string[];
   featured: boolean;
   calendar_connected: boolean;
+  /** URL de Calendly para agendar sesión. Opcional (columna puede no existir aún en DB). */
+  calendly_url?: string | null;
   created_at: string;
   updated_at: string;
 }

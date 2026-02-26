@@ -8,6 +8,7 @@ export async function getExpertsPreview(limit: number): Promise<ExpertWithUser[]
     .from("experts")
     .select("*")
     .eq("featured", true)
+    .order("user_id", { ascending: true })
     .limit(limit);
 
   if (error) return [];
@@ -15,6 +16,7 @@ export async function getExpertsPreview(limit: number): Promise<ExpertWithUser[]
     const { data: anyExperts } = await supabase
       .from("experts")
       .select("*")
+      .order("user_id", { ascending: true })
       .limit(limit);
     if (!anyExperts?.length) return [];
     return enrichExperts(anyExperts, supabase);
@@ -59,7 +61,7 @@ export async function getExpertsList(filters?: {
       q = q.contains("industries", [filters.industry]);
     if (filters?.expertise)
       q = q.contains("expertise", [filters.expertise]);
-    const { data: experts, error } = await q.order("created_at", { ascending: false });
+    const { data: experts, error } = await q.order("user_id", { ascending: true });
     if (error) return [];
     return enrichExperts(experts ?? [], supabase);
   } catch {
@@ -77,7 +79,12 @@ export async function getExpertById(id: string): Promise<ExpertWithUser | null> 
       .single();
     if (error || !expert) return null;
     const [enriched] = await enrichExperts([expert], supabase);
-    return enriched ?? null;
+    if (!enriched) return null;
+    // Normalizar para evitar props no serializables o columnas faltantes
+    return {
+      ...enriched,
+      calendly_url: enriched.calendly_url ?? null,
+    } as ExpertWithUser;
   } catch {
     return null;
   }
