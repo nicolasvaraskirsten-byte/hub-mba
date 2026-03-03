@@ -12,6 +12,7 @@ import { HUB_JOIN_FORM_URL } from "@/lib/constants";
 import { Profiles } from "@/components/sections/Profiles";
 import { HubBenefits } from "@/components/sections/HubBenefits";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import { ExpertsCarousel } from "@/components/sections/ExpertsCarousel";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +23,7 @@ export default async function LandingPage() {
   const dateLocale = locale === "en" ? "en-US" : "es-CL";
 
   const [experts, events] = await Promise.all([
-    getExpertsPreview(6),
+    getExpertsPreview(9),
     getEventsPreview(3),
   ]);
 
@@ -127,34 +128,7 @@ export default async function LandingPage() {
               <Link href="/expertos">{t.seeAllExperts}</Link>
             </Button>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {experts.map((expert) => (
-              <Link key={expert.user_id} href={`/expertos/${expert.user_id}`}>
-                <Card className="h-full rounded-2xl shadow-md hover:shadow-lg transition-all border border-border/80 hover:border-hub-pink/20 bg-white">
-                  <CardHeader className="flex flex-row items-start gap-4">
-                    <Avatar className="h-14 w-14 rounded-xl">
-                      <AvatarFallback className="rounded-xl bg-hub-pink/15 text-hub-pink">
-                        {(expert.user?.name ?? "E").slice(0, 2).toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold truncate">{expert.user?.name}</h3>
-                      <p className="text-sm text-muted-foreground truncate">
-                        {expert.profile?.headline ?? expert.expertise?.[0]}
-                      </p>
-                      <div className="flex flex-wrap gap-1 mt-2">
-                        {(expert.expertise ?? []).slice(0, 3).map((e) => (
-                          <Badge key={e} variant="secondary" className="text-xs">
-                            {e}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardHeader>
-                </Card>
-              </Link>
-            ))}
-          </div>
+          <ExpertsCarousel experts={experts} />
         </div>
       </section>
 

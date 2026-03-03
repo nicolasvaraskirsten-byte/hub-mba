@@ -4,11 +4,11 @@ import { ExpertCard } from "@/components/experts/ExpertCard";
 export async function ExpertsList({
   searchParams,
 }: {
-  searchParams: Promise<{ industry?: string; q?: string }>;
+  searchParams: Promise<{ expertise?: string; q?: string }>;
 }) {
   const params = await searchParams;
   const experts = await getExpertsList({
-    industry: params.industry ?? undefined,
+    expertise: params.expertise ?? undefined,
   });
 
   return (

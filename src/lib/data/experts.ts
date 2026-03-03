@@ -48,6 +48,23 @@ async function enrichExperts(
   })) as ExpertWithUser[];
 }
 
+/** Devuelve la lista de etiquetas (expertise) únicas usadas por los expertos, ordenada. */
+export async function getUniqueExpertise(): Promise<string[]> {
+  try {
+    const supabase = await createServiceClient();
+    const { data, error } = await supabase
+      .from("experts")
+      .select("expertise");
+    if (error || !data?.length) return [];
+    const all = (data as { expertise: string[] }[])
+      .flatMap((r) => r.expertise ?? [])
+      .filter(Boolean);
+    return [...new Set(all)].sort((a, b) => a.localeCompare(b));
+  } catch {
+    return [];
+  }
+}
+
 export async function getExpertsList(filters?: {
   industry?: string;
   expertise?: string;
