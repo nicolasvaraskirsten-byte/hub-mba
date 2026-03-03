@@ -169,30 +169,31 @@ export default async function LandingPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {events.map((ev) => (
-              <Card
-                key={ev.id}
-                className="rounded-2xl shadow-md border border-border/80 bg-white hover:shadow-lg hover:border-hub-pink/20 transition-all"
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <Calendar className="h-4 w-4" />
-                    {new Date(ev.start_at).toLocaleDateString(dateLocale, {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </div>
-                  <h3 className="font-semibold">{ev.title}</h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {ev.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/explorar?tab=eventos">{t.seeMore}</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <Link key={ev.id} href={`/eventos/${ev.id}`} className="block">
+                <Card
+                  className="rounded-2xl shadow-md border border-border/80 bg-white hover:shadow-lg hover:border-hub-pink/20 transition-all h-full"
+                >
+                  <CardHeader>
+                    <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <Calendar className="h-4 w-4" />
+                      {new Date(ev.start_at).toLocaleDateString(dateLocale, {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </div>
+                    <h3 className="font-semibold">{ev.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {ev.description}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <span className="inline-flex items-center justify-center rounded-md border border-input bg-background px-3 py-1.5 text-sm font-medium shadow-sm hover:bg-accent">
+                      {t.seeMore}
+                    </span>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

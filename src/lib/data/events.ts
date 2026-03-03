@@ -31,3 +31,18 @@ export async function getEventsList(limit = 50): Promise<Event[]> {
     return [];
   }
 }
+
+export async function getEventById(id: string): Promise<Event | null> {
+  try {
+    const supabase = await createServiceClient();
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .eq("id", id)
+      .single();
+    if (error || !data) return null;
+    return data as Event;
+  } catch {
+    return null;
+  }
+}

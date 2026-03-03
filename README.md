@@ -36,7 +36,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
 SUPABASE_SERVICE_ROLE_KEY=eyJ...   # Solo en servidor; no exponer en cliente
 
-# Opcional: emails con Resend
+# Opcional: emails con Resendnpm run dev
 RESEND_API_KEY=re_...
 EMAIL_FROM=Hub MBA UC <noreply@tudominio.com>
 

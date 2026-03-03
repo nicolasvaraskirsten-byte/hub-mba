@@ -48,7 +48,7 @@ const translations = {
       ombudsLink: "Ir a la Oficina de Ombuds UC",
     },
     landing: {
-      heroTitle: "Conecta experiencia ejecutiva con emprendimiento con impacto",
+      heroTitle: "Conecta experiencia ejecutiva con emprendimiento e innovación con impacto",
       heroSubtitle:
         "El espacio del MBA UC que articula trayectoria empresarial e innovación para que despegues tu siguiente paso.",
       exclusiveBadge: "Exclusivo MBA UC",
@@ -182,7 +182,7 @@ const translations = {
       ombudsLink: "Go to Ombuds Office UC",
     },
     landing: {
-      heroTitle: "Connect executive experience with entrepreneurship and impact",
+      heroTitle: "Connect executive experience with entrepreneurship and innovation with impact",
       heroSubtitle:
         "The MBA UC space that connects business trajectory and innovation so you can take your next step.",
       exclusiveBadge: "Exclusive MBA UC",

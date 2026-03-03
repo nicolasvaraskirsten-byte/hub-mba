@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,32 +17,33 @@ export async function EventsTab() {
         </div>
       ) : (
         upcoming.map((ev) => (
-          <Card key={ev.id} className="rounded-2xl shadow-sm">
-            <CardHeader>
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Calendar className="h-4 w-4" />
-                {new Date(ev.start_at).toLocaleDateString("es-CL", {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </div>
-              <h3 className="font-semibold">{ev.title}</h3>
-              <p className="text-sm text-muted-foreground line-clamp-2">
-                {ev.description}
-              </p>
-            </CardHeader>
-            <CardContent>
-              {ev.link ? (
-                <Button asChild size="sm" variant="outline">
+          <Card key={ev.id} className="rounded-2xl shadow-sm overflow-hidden">
+            <Link href={`/eventos/${ev.id}`} className="block">
+              <CardHeader>
+                <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                  <Calendar className="h-4 w-4" />
+                  {new Date(ev.start_at).toLocaleDateString("es-CL", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </div>
+                <h3 className="font-semibold">{ev.title}</h3>
+                <p className="text-sm text-muted-foreground line-clamp-2">
+                  {ev.description}
+                </p>
+              </CardHeader>
+            </Link>
+            <CardContent className="flex flex-wrap items-center gap-2">
+              <Button asChild size="sm" variant="outline">
+                <Link href={`/eventos/${ev.id}`}>Ver más</Link>
+              </Button>
+              {ev.link && (
+                <Button asChild size="sm" variant="ghost">
                   <a href={ev.link} target="_blank" rel="noopener noreferrer">
                     Ver enlace
                   </a>
                 </Button>
-              ) : (
-                <span className="text-sm text-muted-foreground">
-                  {ev.location ?? "Por confirmar"}
-                </span>
               )}
             </CardContent>
           </Card>
