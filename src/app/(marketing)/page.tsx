@@ -3,7 +3,6 @@ import { cookies } from "next/headers";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowRight, Calendar, BookOpen } from "lucide-react";
 import { getExpertsPreview } from "@/lib/data/experts";
 import { getEventsPreview } from "@/lib/data/events";
