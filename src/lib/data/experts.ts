@@ -59,7 +59,7 @@ export async function getUniqueExpertise(): Promise<string[]> {
     const all = (data as { expertise: string[] }[])
       .flatMap((r) => r.expertise ?? [])
       .filter(Boolean);
-    return [...new Set(all)].sort((a, b) => a.localeCompare(b));
+    return Array.from(new Set(all)).sort((a, b) => a.localeCompare(b));
   } catch {
     return [];
   }
