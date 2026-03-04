@@ -60,6 +60,7 @@ export default async function LandingPage() {
                 </Button>
                 <Link
                   href="/expertos"
+                  prefetch={false}
                   className="text-sm font-medium text-white hover:text-white/95 underline underline-offset-2 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"
                 >
                   {t.ctaSecondary}
@@ -124,7 +125,7 @@ export default async function LandingPage() {
               variant="outline"
               className="w-fit border-muted-foreground/30 text-muted-foreground hover:bg-muted"
             >
-              <Link href="/expertos">{t.seeAllExperts}</Link>
+              <Link href="/expertos" prefetch={false}>{t.seeAllExperts}</Link>
             </Button>
           </div>
           <ExpertsCarousel experts={experts} />
@@ -218,6 +219,7 @@ export default async function LandingPage() {
             </Button>
             <Link
               href="/expertos"
+              prefetch={false}
               className="inline-flex items-center justify-center rounded-md text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground underline underline-offset-2 h-11 px-4"
             >
               {t.ctaSecondary}

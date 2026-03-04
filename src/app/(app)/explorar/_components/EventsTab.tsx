@@ -6,9 +6,14 @@ import { getEventsList } from "@/lib/data/events";
 
 export async function EventsTab() {
   const events = await getEventsList();
-  const upcoming = events.filter(
-    (e) => new Date(e.start_at) >= new Date()
-  );
+  const now = new Date();
+  const upcoming = events
+    .filter(
+      (e) => !e.end_at || new Date(e.end_at) >= now
+    )
+    .sort(
+      (a, b) => new Date(a.start_at).getTime() - new Date(b.start_at).getTime()
+    );
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {upcoming.length === 0 ? (

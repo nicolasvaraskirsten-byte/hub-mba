@@ -24,14 +24,16 @@ export default async function EventDetailPage({
   return (
     <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <Link
-        href="/explorar?tab=eventos"
+        href="/"
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
       >
         <ArrowLeft className="h-4 w-4" />
-        Volver a eventos
+        Volver a inicio
       </Link>
 
-      <Card className="rounded-2xl shadow-sm overflow-hidden max-w-3xl">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="lg:col-span-7">
+      <Card className="rounded-2xl shadow-sm overflow-hidden h-full">
         <CardHeader className="space-y-4">
           <div className="flex flex-wrap items-center gap-2 text-muted-foreground text-sm">
             <span className="flex items-center gap-2">
@@ -91,6 +93,21 @@ export default async function EventDetailPage({
           )}
         </CardContent>
       </Card>
+        </div>
+        {event.image_url && (
+          <div className="lg:col-span-5">
+            <div className="sticky top-24 rounded-2xl overflow-hidden border border-border/80 bg-muted/30 aspect-[4/3] lg:aspect-auto lg:min-h-[400px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={event.image_url}
+                alt={event.title}
+                className="h-full w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

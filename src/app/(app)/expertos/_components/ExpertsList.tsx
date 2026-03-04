@@ -1,3 +1,4 @@
+import { unstable_noStore } from "next/cache";
 import { getExpertsList } from "@/lib/data/experts";
 import { ExpertCard } from "@/components/experts/ExpertCard";
 
@@ -6,6 +7,7 @@ export async function ExpertsList({
 }: {
   searchParams: Promise<{ expertise?: string; q?: string }>;
 }) {
+  unstable_noStore();
   const params = await searchParams;
   const experts = await getExpertsList({
     expertise: params.expertise ?? undefined,

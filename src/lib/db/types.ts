@@ -71,6 +71,8 @@ export interface Event {
   end_at: string | null;
   location: string | null;
   link: string | null;
+  /** URL pública de la imagen (ej. Supabase Storage). Opcional hasta aplicar migración. */
+  image_url?: string | null;
   tags: string[];
   created_at: string;
 }
