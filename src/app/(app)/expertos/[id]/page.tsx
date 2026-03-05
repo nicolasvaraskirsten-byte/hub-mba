@@ -108,6 +108,9 @@ export default async function ExpertProfilePage({
               <p className="text-sm text-muted-foreground">
                 Reserva una reunión con {expert.user?.name?.split(" ")[0] ?? "el experto"}.
               </p>
+              <p className="text-xs text-muted-foreground mt-2 italic">
+                Se priorizarán las agendas para los nuevos ingresos de alumnos del MBA 2026.
+              </p>
             </CardHeader>
             <CardContent>
               <ExpertCalendlyCard
